@@ -53,3 +53,5 @@ gem 'rubocop', require: false
 gem 'rails_admin', '~> 0.8.1'
 gem 'devise'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+

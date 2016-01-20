@@ -1,5 +1,7 @@
 class ProfessorsController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def index
 		@professors = Professor.all 
 	end
