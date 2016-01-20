@@ -45,5 +45,11 @@ group :development do
   gem 'spring'
 end
 
-gem 'rspec' 
-
+gem 'simple_form'
+gem "mini_magick"
+gem "paperclip", "~> 4.3"
+gem 'rspec', '~> 3.4'
+gem 'rubocop', require: false
+gem 'rails_admin', '~> 0.8.1'
+gem 'devise'
+gem 'acts_as_votable', '~> 0.10.0'
