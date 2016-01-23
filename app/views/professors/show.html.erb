@@ -1,0 +1,11 @@
+<p><strong><%=@professor.name%></strong></p>
+
+<%= image_tag(@professor.avatar.url(:medium), :class => "img-rounded") %>
+
+<h6>Avalie e Adicione um comentário</h6>
+<%= form_for([@professor, @professor.comments.build]) do |comment| %>
+<p>
+	<%= comment.label :Comentário %>
+	<%= comment.text_area :text %>
+</p>
+<%end%>
