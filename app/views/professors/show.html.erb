@@ -1,11 +1,33 @@
-<p><strong><%=@professor.name%></strong></p>
 
-<%= image_tag(@professor.avatar.url(:medium), :class => "img-rounded") %>
+<div class="container">
+	<div class="col-md-6">
+		<p><strong><%=@professor.name%></strong></p>
 
-<h6>Avalie e Adicione um comentário</h6>
-<%= form_for([@professor, @professor.comments.build]) do |comment| %>
-<p>
-	<%= comment.label :Comentário %>
-	<%= comment.text_area :text %>
-</p>
-<%end%>
+		<%= image_tag(@professor.avatar.url(:medium), :class => "img-rounded") %>
+	</div>
+
+	<div class="col-md-6">
+		<h6>Avalie e Adicione um comentário</h6>
+
+		<%= link_to bom_professor_path(@professor), method: :put do %>
+		  Bom
+		  <%= @professor.get_upvotes.size %>
+		<% end %>
+		<%= link_to ruim_professor_path(@professor), method: :put do %>
+		  Ruim
+		  <%= @professor.get_downvotes.size %>
+		<% end %>
+
+		<%= simple_form_for([@professor, @professor.comments.build]) do |comment| %>
+		<p>
+			<%= comment.label :Comentário %>
+			<%= comment.text_area :text %>
+		</p>
+
+		<p>
+			<%= comment.submit :Enviar %>
+		</p>
+		<%end%>
+	</div>
+</div>
+

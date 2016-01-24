@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 	def create
 		@professor = Professor.find(params[:professor_id])
 		@comment = @professor.comments.create(comments_params)
-		redirect_to professor_path(@professor)
+		redirect_to "/"
 	end 
 
 	private

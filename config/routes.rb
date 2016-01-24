@@ -4,5 +4,9 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :professors do
   	resources :comments
+  	member do
+  		put "bom", to: "professors#vote"
+  		put "ruim", to: "professors#unvote"
+  	end
   end 
 end
