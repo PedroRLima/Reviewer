@@ -6,3 +6,9 @@
 .linha{
 	padding-bottom: 80px;
 }
+
+.back{
+	background-image: url(uenf.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
