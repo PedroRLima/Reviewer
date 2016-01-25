@@ -1,7 +1,7 @@
 
 <div class="container">
 	<div class="col-md-6">
-		<p><strong><%=@professor.name%></strong></p>
+		<p><strong><%= @professor.name %></strong></p>
 
 		<%= image_tag(@professor.avatar.url(:medium), :class => "img-rounded") %>
 	</div>
@@ -9,11 +9,11 @@
 	<div class="col-md-6">
 		<h6>Avalie e Adicione um comentário</h6>
 
-		<%= link_to bom_professor_path(@professor), method: :put do %>
+		<%= link_to bom_professor_path(@professor), method: :put, :class => "btn btn-primary" do %>
 		  Bom
 		  <%= @professor.get_upvotes.size %>
 		<% end %>
-		<%= link_to ruim_professor_path(@professor), method: :put do %>
+		<%= link_to ruim_professor_path(@professor), method: :put, :class => "btn btn-primary" do %>
 		  Ruim
 		  <%= @professor.get_downvotes.size %>
 		<% end %>

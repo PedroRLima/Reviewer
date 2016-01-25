@@ -1,4 +1,10 @@
+<br>
 <div class="container">
+	<%if user_signed_in?%>
+		<p class="text-right">Signed as <%= current_user.email %>
+		<%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'btn btn-primary' %>
+		</p>
+	<%end%>
 	<div class="panel panel-primary">
 
 		<div class="panel heading">
